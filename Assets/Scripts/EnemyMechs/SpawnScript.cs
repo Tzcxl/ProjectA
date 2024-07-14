@@ -16,6 +16,6 @@ public class SpawnScript : MonoBehaviour
         GameObject spawnedObject = Instantiate(objectsToSpawn[randomIndex], transform.position, Quaternion.identity);
 
         // Добавляем компонент FollowPlayer к спавненному объекту
-        spawnedObject.AddComponent<EnemyMond>().player = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnedObject.AddComponent<EnemyMond>().player = GameObject.FindGameObjectWithTag("_player").transform;
     }
 }

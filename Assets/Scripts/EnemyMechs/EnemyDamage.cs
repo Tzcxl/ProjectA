@@ -1,71 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyDamage:MonoBehaviour
+
+public class EnemyDamage : MonoBehaviour
 {
     public GameObject Enemyobject;
-    public GameObject bulletpref;
-    DamagefromWeapon WeaponDamage = new DamagefromWeapon();
-    EnemyStats Enemy = new EnemyStats();
-    private SpriteRenderer SpriteRenderer;
-    private Color startColor;
-    public float invulnerabilityTime = 1f;
+    public GameObject Bulletpref;
+    public const float InvulnerabilityTime = 1f;
+
+    private Weapon _weaponDamage = new Weapon();
+    private GhostEnemy _enemy = new GhostEnemy();
+    private SpriteRenderer _spriteRenderer;
+    private Color _startColor;
+
     public void Start()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        startColor = SpriteRenderer.color;
-        WeaponDamage.bulletStrength = 10f;
-        Enemy.Speed = 2.5f;
-        Enemy.currentHealthPoint = 0f;
-        Enemy.HealthPoint = 100f;
-        Enemy.Damage = 5f;
-        Enemy.CharName = "Enemy";
-        Enemy.currentHealthPoint = Enemy.HealthPoint;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _startColor = _spriteRenderer.color;
+        _weaponDamage.bulletStrength = 10f;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Bullet"))
+        if (!other.CompareTag("Bullet"))
         {
-            bulletpref.GetComponent<GameObject>();
-            // Применяем урон к врагу
-            TakeDamage(WeaponDamage.bulletStrength);
-
-            // Выключаем пулю
-            Destroy(other.gameObject);
+            return;
         }
+
+        Bulletpref.GetComponent<GameObject>();
+        // Применяем урон к врагу
+        TakeDamage(_weaponDamage.bulletStrength);
+
+        // Выключаем пулю
+        Destroy(other.gameObject);
     }
+
     public void TakeDamage(float damage)
     {
-        Enemy.currentHealthPoint -= damage;
-        Enemy.currentHealthPoint = Mathf.Max(Enemy.currentHealthPoint, 0); // Ensure health doesn't go negative
-        SpriteRenderer.color = new Color(255, 0, 0);
-        Debug.Log(Enemy.currentHealthPoint);
+        _enemy.CurrentHealthPoint -= damage;
+        _enemy.CurrentHealthPoint = Mathf.Max(_enemy.CurrentHealthPoint, 0); // Ensure health doesn't go negative
+        _spriteRenderer.color = new Color(255, 0, 0);
+        Debug.Log(_enemy.CurrentHealthPoint);
         StartCoroutine(TakedamageTimer());
-        if (Enemy.currentHealthPoint == 0)
+        if (_enemy.CurrentHealthPoint == 0)
         {
             Destroy(Enemyobject);
         }
-        
     }
 
-
-    
     private IEnumerator TakedamageTimer()
-    {   
-        yield return new WaitForSeconds(invulnerabilityTime);
-        SpriteRenderer.color = startColor;
+    {
+        yield return new WaitForSeconds(InvulnerabilityTime);
+        _spriteRenderer.color = _startColor;
     }
 }
 
-public class DamagefromWeapon: Weapon
+public class GhostEnemy : CharacterBase
 {
-   
+    public GhostEnemy() : base(100)
+    {
+        Speed = 2.5f;
+        Damage = 5f;
+        CharName = "_enemy";
+    }
 }
-public class EnemyStats : BaseStats
-{
-
-}
-
-
-
-
