@@ -1,7 +1,4 @@
-using JetBrains.Annotations;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,12 +9,12 @@ public class PlayerControl : MonoBehaviour
     private readonly Player _player = new Player();
     private readonly GhostEnemy _enemy = new GhostEnemy();
 
-    public Rigidbody2D Rigidbody { get; set; }
-    public TextMeshProUGUI HealthText { get; set; }
-    public Slider HealthSlider { get; set; }
-    public float InvulnerabilityTime { get; set; }
-    public SpriteRenderer Sprite { get; set; }
-    public Animator Animator { get; set; }
+    public Rigidbody2D Rigidbody;
+    public TextMeshProUGUI HealthText;
+    public Slider HealthSlider;
+    public float InvulnerabilityTime;
+    public SpriteRenderer Sprite;
+    public Animator Animator; 
 
     public void Start()
     {
@@ -37,7 +34,7 @@ public class PlayerControl : MonoBehaviour
 
         // Вычисляем вектор движения
         _isRunning = Mathf.Abs(horizontalInput) > 0;
-        Animator.SetFloat("Run", horizontalInput);
+        Animator.SetBool("Run", _isRunning);
 
         Sprite.flipX = horizontalInput > 0;
         Animator.SetFloat("VerticalMove", verticalInput);
@@ -47,7 +44,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("_enemy") || _isInvulnerable)
+        if (!collision.gameObject.CompareTag("Enemy") || _isInvulnerable)
         {
             return;
         }

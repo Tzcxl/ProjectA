@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 [SerializeField]
 public class CharacterBase
 {
