@@ -8,6 +8,7 @@ public class GridManager : MonoBehaviour
 {
     public List<GameObject> Cells = new List<GameObject>();
     public List<Image> cellsImage = new List<Image>();
+    public List<Image> unitImage = new List<Image>();
     private List<GameObject> UnitPlaces = new List<GameObject>();
     private List<GameObject> AttackPlaces = new List<GameObject>();
     private List<GameObject> HPPlaces = new List<GameObject>();
@@ -24,6 +25,8 @@ public class GridManager : MonoBehaviour
     void InitiateCells()
     {
         CollectCellsByNames(CellsNames.Cells);
+        GetImage(Cells, cellsImage);
+        GetImage(UnitPlaces, unitImage);
         GetChild(Cells, "UnitPlace", UnitPlaces);
         GetChild(Cells, "AttackPlace", AttackPlaces);
         GetChild(Cells, "InitPlace", InitPlaces);
