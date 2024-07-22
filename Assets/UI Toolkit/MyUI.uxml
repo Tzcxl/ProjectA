@@ -1,0 +1,117 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Button.uss?fileID=7433441132597879392&amp;guid=063b5c5f8163002459dfcf9c8c6af3c8&amp;type=3#Button" />
+    <ui:GroupBox name="BattleGrid" style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0);">
+        <ui:VisualElement name="PauseMenu" style="align-items: flex-end; justify-content: center; height: 10%;">
+            <ui:Button name="PauseButton" text="Button" display-tooltip-when-elided="true" class="Button" style="height: 45px; width: 48px; justify-content: flex-start; align-items: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Enemy3row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="E31BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E31UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E31UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E32BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E32UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E32UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E33BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E33UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E33UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E34BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E34UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E34UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Enemy2row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="E21BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E21UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E21UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E22BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E22UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E22UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E23BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E23UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E23UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E24BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E24UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E24UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Enemy1row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="E11BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E11UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E11UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E12BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E12UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E12UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E13BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E13UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E13UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="E14BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="E14UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="E14UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="height: 4%; background-color: rgb(0, 0, 0); padding-top: 0; margin-top: 40px; margin-bottom: 40px; width: 100%;" />
+        <ui:VisualElement name="Player1row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="P11BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P11UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P11UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P12BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P12UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P12UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center; -unity-font: url(&quot;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&quot;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P13BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P13UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P13UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P14BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P14UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P14UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Player2row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="P21BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P21UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P21UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P22BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P22UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P22UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P23BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P23UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P23UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P24BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P24UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P24UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Player3row" class="BigPan Panel" style="height: 20%; align-items: center; flex-direction: row; margin-top: 0; margin-right: 30%; margin-bottom: 0; margin-left: 30%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; justify-content: space-between;">
+            <ui:VisualElement name="P31BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P31UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P31UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P32BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P32UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P32UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P33BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P33UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P33UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="P34BG" class="Panel" style="justify-content: space-between; align-items: center; flex-direction: row;">
+                <ui:Button name="P34UB" display-tooltip-when-elided="true" class="Button" style="flex-direction: row;" />
+                <ui:Label name="P34UT" display-tooltip-when-elided="true" style="align-items: flex-start; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:GroupBox>
+</ui:UXML>
