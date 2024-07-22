@@ -6,17 +6,20 @@ using TMPro;
 
 public class GridManager : MonoBehaviour
 {
-    public List<GameObject> Cells = new List<GameObject>();
-    public List<Image> cellsImage = new List<Image>();
+    private List<GameObject> Cells = new List<GameObject>();
     private List<GameObject> UnitPlaces = new List<GameObject>();
     private List<GameObject> AttackPlaces = new List<GameObject>();
     private List<GameObject> HPPlaces = new List<GameObject>();
     private List<GameObject> MnvrPlaces = new List<GameObject>();
     private List<GameObject> InitPlaces = new List<GameObject>();
+
     private List<TMP_Text> attackValue = new List<TMP_Text>();
     private List<TMP_Text> HPValue = new List<TMP_Text>();
     private List<TMP_Text> InitValue = new List<TMP_Text>();
     private List<TMP_Text> MnvrValue = new List<TMP_Text>();
+
+    private List<Image> cellsImage = new List<Image>();
+    private List<Image> unitImage = new List<Image>();
     void Start()
     {
         InitiateCells();        
@@ -24,6 +27,8 @@ public class GridManager : MonoBehaviour
     void InitiateCells()
     {
         CollectCellsByNames(CellsNames.Cells);
+        GetImage(Cells, cellsImage);
+        GetImage(UnitPlaces, unitImage);
         GetChild(Cells, "UnitPlace", UnitPlaces);
         GetChild(Cells, "AttackPlace", AttackPlaces);
         GetChild(Cells, "InitPlace", InitPlaces);
