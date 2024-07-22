@@ -4,46 +4,33 @@ using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
-    private List<Image> Cells = new List<Image>();
-    private List<Image> UnitPlace = new List<Image>();
-    // Массив имен UI элементов, которые вы хотите найти
-    private List<string> imageNames = CellsNames.cellsName;
+    private List<GameObject> Cells = new List<GameObject>();
+    private List<GameObject> UnitPlace = new List<GameObject>();
 
     void Start()
     {
-        // Найти и сохранить все UI изображения по именам в списке
-        CollectImagesByNames(imageNames);
+        Cells.Clear();    
+        CollectImagesByNames(CellsNames.Cells);
+        GetDaughter(Cells, "UnitPlace", UnitPlace);
     }
 
     void CollectImagesByNames(List<string> names)
-    {
-
+    { 
         foreach (string name in names)
         {
-            // Найти объект по имени
-            GameObject obj = GameObject.Find(name);
-
-            if (obj != null)
-            {
-                // Получить компонент Image
-                Image image = obj.GetComponent<Image>();
-
-                if (image != null)
-                {
-                    Cells.Add(image);
-                }
-                else
-                {
-                    Debug.LogWarning($"Object '{name}' found but does not have an Image component.");
-                }
-            }
-            else
-            {
-                Debug.LogWarning($"Object with name '{name}' not found.");
-            }
+            GameObject obj = GameObject.FindGameObjectWithTag("Cell");
+            obj.name = name;
+            Cells.Add(obj);
         }
-
-        // Вывести количество найденных изображений в консоль
-        Debug.Log($"Found {Cells.Count} images.");
+    }
+    void GetDaughter(List<GameObject> CellsList,string daughterName,List<GameObject> childList)
+    {
+        foreach(GameObject obj in CellsList) 
+        {
+            Transform parent = obj.transform;
+            Transform child = parent.Find(daughterName);
+            GameObject Child = child.gameObject;
+            childList.Add(Child);
+        }
     }
 }

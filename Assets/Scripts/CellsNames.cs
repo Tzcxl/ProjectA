@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class CellsNames : MonoBehaviour
 {
-    public static readonly List<string> cellsName = new List<string>()
+    public static List<string> Cells = new List<string>()
      {
-        "Meow"
-         /*"Cell (0)",
          "Cell (1)",
          "Cell (2)",
          "Cell (3)",
@@ -30,7 +28,8 @@ public class CellsNames : MonoBehaviour
          "Cell (20)",
          "Cell (21)",
          "Cell (22)",
-         "Cell (23)"*/
+         "Cell (23)",
+         "Cell (24)"
      };
    
 
