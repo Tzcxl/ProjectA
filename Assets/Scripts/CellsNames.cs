@@ -5,7 +5,8 @@ using UnityEngine;
 public class CellsNames : MonoBehaviour
 {
     public static List<string> Cells = new List<string>()
-     {
+    {   
+         "Cell (0)",
          "Cell (1)",
          "Cell (2)",
          "Cell (3)",
@@ -29,7 +30,6 @@ public class CellsNames : MonoBehaviour
          "Cell (21)",
          "Cell (22)",
          "Cell (23)",
-         "Cell (24)"
      };
    
 

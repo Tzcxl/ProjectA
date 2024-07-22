@@ -1,36 +1,48 @@
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GridManager : MonoBehaviour
 {
-    private List<GameObject> Cells = new List<GameObject>();
+    public List<GameObject> Cells = new List<GameObject>();
+    public List<Image> cellsImage = new List<Image>();
     private List<GameObject> UnitPlace = new List<GameObject>();
 
     void Start()
     {
-        Cells.Clear();    
-        CollectImagesByNames(CellsNames.Cells);
-        GetDaughter(Cells, "UnitPlace", UnitPlace);
+        CollectCellsByNames(CellsNames.Cells);
+        GetChild(Cells, "UnitPlace", UnitPlace);
+        GetImage(Cells, cellsImage);
+        Debug.Log(cellsImage.Count);
     }
 
-    void CollectImagesByNames(List<string> names)
+    void CollectCellsByNames(List<string> names)
     { 
         foreach (string name in names)
         {
-            GameObject obj = GameObject.FindGameObjectWithTag("Cell");
-            obj.name = name;
+            GameObject obj = GameObject.Find(name);
             Cells.Add(obj);
         }
     }
-    void GetDaughter(List<GameObject> CellsList,string daughterName,List<GameObject> childList)
+    void GetChild(List<GameObject> CellsList,string childName,List<GameObject> childList)
     {
         foreach(GameObject obj in CellsList) 
         {
             Transform parent = obj.transform;
-            Transform child = parent.Find(daughterName);
+            Transform child = parent.Find(childName);
             GameObject Child = child.gameObject;
             childList.Add(Child);
+        }
+    }
+    void GetImage(List<GameObject> gameObjectsList,List<Image>imagePlaceList)
+    {
+        foreach(GameObject gameObject in gameObjectsList)
+        {
+            Image image = gameObject.GetComponent<Image>();
+            image.color = Color.red;
+            imagePlaceList.Add(image);
         }
     }
 }

@@ -7944,7 +7944,7 @@ GameObject:
   - component: {fileID: 535887556}
   - component: {fileID: 535887555}
   m_Layer: 5
-  m_Name: Cell
+  m_Name: Cell (0)
   m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11408,6 +11408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97471ffc52b164478c905c653fe26d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cells: []
+  cellsImage: []
 --- !u!4 &805119738
 Transform:
   m_ObjectHideFlags: 0
