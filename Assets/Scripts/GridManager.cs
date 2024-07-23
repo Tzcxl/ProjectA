@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -24,6 +24,7 @@ public class GridManager : MonoBehaviour
     {
         InitiateCells();        
     }
+
     void InitiateCells()
     {
         CollectCellsByNames(CellsNames.Cells);
@@ -39,6 +40,7 @@ public class GridManager : MonoBehaviour
         GetText(HPPlaces, HPValue, "HPValue");
         GetText(MnvrPlaces, MnvrValue, "MnvrValue");
     }
+
     void CollectCellsByNames(List<string> names)
     { 
         foreach (string name in names)
@@ -79,3 +81,4 @@ public class GridManager : MonoBehaviour
         }
     }
 }
+*/
