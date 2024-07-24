@@ -1,4 +1,5 @@
 using System;
+using R3;
 using UnityEngine;
 
 namespace Assets.Scripts.Units.Base
@@ -14,9 +15,6 @@ namespace Assets.Scripts.Units.Base
         public int Level;
         public int Exp;
 
-       // [field: SerializeField] public ReactiveProperty<int> MaxHP { get; set; }
-
+        [field: SerializeField] public ReactiveProperty<int> MaxHP { get; set; }
     }
-
-   
 }
