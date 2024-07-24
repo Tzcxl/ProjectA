@@ -1,31 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-[CreateAssetMenu(fileName = "CellsConfig", menuName = "Config/CellsConfig")]
-[System.Serializable]
-public class CellsConfig : ScriptableObject
-{
-    public TMP_Text AttackText; //=> Cellchelik.hp;
-    public TMP_Text HPText;
-    public TMP_Text InitText;
-    public TMP_Text MnvrText;
-}
-public class Cell0 : PlayerUnits
-{
+using Assets.Scripts.Units.Base;
 
-    CellsConfig cell0 = new CellsConfig();
-    PlayerUnits war = new PlayerUnits();
 
-    private void Start()
+namespace Assets.Scripts
+{
+    public class CellsScript : MonoBehaviour
     {
-        war.ToStart();
-        cell0.AttackText.text = war.unitDamage.ToString();
-        cell0.HPText.text = war.unitHP.ToString();
-        cell0.InitText.text = war.unitInitiative.ToString();
-        cell0.MnvrText.text=war.unitMoves.ToString();
+        [field: SerializeField] public int Row { get; private set; }
+        [field: SerializeField] public int Column { get; private set; }
+        [field: SerializeField] public UnitBase Unit { get; set; }
+        [field: SerializeField] public int AttackText { get; private set; }
+        [field: SerializeField] public int HPText { get; private set; }
+        [field: SerializeField] public int InitText { get; private set; }
+        [field: SerializeField] public int MnvrText { get; private set; }
+
+        //GetComponent<TMPro.TextMeshProUGUI>().text
+        private void Start()
+        {
+           SubscribeToChanges();
+        }
+        public void SubscribeToChanges()
+        {
+            Unit.Stats.MaxHP.Subscribe();
+        }
+
+        private void HpChanged(int newHP)
+        {
+            //
+        }
+
     }
-    
 }
+
+
+
+
 

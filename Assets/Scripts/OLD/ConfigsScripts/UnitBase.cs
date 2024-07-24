@@ -1,11 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static UserInterfaceGridLayout.FlexibleGridLayout;
 
-[CreateAssetMenu(fileName = "UnitsConfigData", menuName = "Config/UnitsConfigData")]
-
-[System.Serializable]
-public class UnitBase : ScriptableObject
+namespace Assets.Scripts.Units.Base
 {
-    public List<UnitConfig> units;
-}
+    [Serializable]
+    [CreateAssetMenu(fileName = "Unit", menuName = "Config/Unit")]
+    public class UnitBase : ScriptableObject
+    {
+        public UnitType UnitType;
+        public UnitStats Stats;
+        public List<UnitBase> CanEvolveTo;
 
+        public bool BelongsToUser;
+        public int CellRow = -1;
+        public int CellColumn = -1;
+        public Texture2D CellSprite;
+    }
+}

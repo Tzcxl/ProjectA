@@ -1,17 +1,15 @@
+using UniRx;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class UnitStats : MonoBehaviour
 {
-    public UnitConfig unitConfig;
-
-    private float health;
-    private float speed;
-    public static int initiative;
-
-    void Start()
-    { 
-            health = unitConfig.unitHP;
-            speed = unitConfig.unitInitiative;
-            initiative = unitConfig.unitDamage;
-    }
+    public string LoreName;
+    public int CurrentHP;
+    public int Attack;
+    public int Initiative;
+    public int ManeuverAmount;
+    public int Level;
+    public int EXP;
+    [field:SerializeField] public ReactiveProperty<int> HP { get; set; }
+    [field: SerializeField] public ReactiveProperty<int> Init { get; set; }
 }
