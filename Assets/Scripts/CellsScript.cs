@@ -17,7 +17,7 @@ namespace Assets.Scripts
         [field: SerializeField] public int HPText { get; private set; }
         [field: SerializeField] public int InitText { get; private set; }
         [field: SerializeField] public int MnvrText { get; private set; }
-        [field: SerializeField] public ReactiveProperty<UnitBase> Unit { get; set; }
+        [field: SerializeField] public SerializableReactiveProperty<UnitBase> Unit { get; set; }
 
         private readonly List<IDisposable> _statSubscriptions = new();
 

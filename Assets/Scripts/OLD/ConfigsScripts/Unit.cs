@@ -10,6 +10,6 @@ public class UnitStats : MonoBehaviour
     public int ManeuverAmount;
     public int Level;
     public int EXP;
-    [field:SerializeField] public ReactiveProperty<int> HP { get; set; }
-    [field: SerializeField] public ReactiveProperty<int> Init { get; set; }
+    [field:SerializeField] public SerializableReactiveProperty<int> HP { get; set; }
+    [field: SerializeField] public SerializableReactiveProperty<int> Init { get; set; }
 }

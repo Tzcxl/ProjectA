@@ -15,6 +15,6 @@ namespace Assets.Scripts.Units.Base
         public int Level;
         public int Exp;
 
-        [field: SerializeField] public ReactiveProperty<int> MaxHP { get; set; }
+        [field: SerializeField] public SerializableReactiveProperty<int> MaxHP { get; set; }
     }
 }
