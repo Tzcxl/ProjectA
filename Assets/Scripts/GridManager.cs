@@ -1,84 +1,37 @@
-/*using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-
+using Assets.Scripts;
+using Assets.Scripts.Unit;
+using System.Collections;
 
 public class GridManager : MonoBehaviour
 {
-    private List<GameObject> Cells = new List<GameObject>();
-    private List<GameObject> UnitPlaces = new List<GameObject>();
-    private List<GameObject> AttackPlaces = new List<GameObject>();
-    private List<GameObject> HPPlaces = new List<GameObject>();
-    private List<GameObject> MnvrPlaces = new List<GameObject>();
-    private List<GameObject> InitPlaces = new List<GameObject>();
+    private CellScript _c;
+    private CellScript _pc;
+    private UnitBase _unit;
 
-    private List<TMP_Text> attackValue = new List<TMP_Text>();
-    private List<TMP_Text> HPValue = new List<TMP_Text>();
-    private List<TMP_Text> InitValue = new List<TMP_Text>();
-    private List<TMP_Text> MnvrValue = new List<TMP_Text>();
-
-    private List<Image> cellsImage = new List<Image>();
-    private List<Image> unitImage = new List<Image>();
-    void Start()
+    private void Start()
     {
-        InitiateCells();        
+        Application.targetFrameRate = 60;
+        _unit = Resources.Load<UnitBase>("UnitBase");
+        _unit.Stats.ResetStats();
+        InvokeRepeating(nameof(UpdateC), 0, 2);
     }
 
-    void InitiateCells()
+    private void Update()
     {
-        CollectCellsByNames(CellsNames.Cells);
-        GetImage(Cells, cellsImage);
-        GetImage(UnitPlaces, unitImage);
-        GetChild(Cells, "UnitPlace", UnitPlaces);
-        GetChild(Cells, "AttackPlace", AttackPlaces);
-        GetChild(Cells, "InitPlace", InitPlaces);
-        GetChild(Cells, "HPPlace", HPPlaces);
-        GetChild(Cells, "MnvrPlace", MnvrPlaces);
-        GetText(AttackPlaces, attackValue, "AttackValue");
-        GetText(InitPlaces, InitValue, "InitValue");
-        GetText(HPPlaces, HPValue, "HPValue");
-        GetText(MnvrPlaces, MnvrValue, "MnvrValue");
+        _unit.Stats.HP.Value++;
     }
 
-    void CollectCellsByNames(List<string> names)
-    { 
-        foreach (string name in names)
-        {
-            GameObject obj = GameObject.Find(name);
-            Cells.Add(obj);
-        }
-    }
-    void GetChild(List<GameObject> CellsList,string childName,List<GameObject> childList)
+    private void UpdateC()
     {
-        foreach(GameObject obj in CellsList) 
-        {
-            Transform parent = obj.transform;
-            Transform child = parent.Find(childName);
-            GameObject Child = child.gameObject;
-            childList.Add(Child);
-        }
-    }
-    void GetImage(List<GameObject> gameObjectsList,List<Image>imagePlaceList)
-    {
-        foreach(GameObject gameObject in gameObjectsList)
-        {
-            Image image = gameObject.GetComponent<Image>();
-            imagePlaceList.Add(image);
-        }
-    }
-    void GetText(List<GameObject> objectWithText,List<TMP_Text> textlist,string childName)
-    {
-        foreach (GameObject obj in objectWithText)
-        {
-            Transform parent = obj.transform;
-            Transform child = parent.Find(childName);
-            GameObject Child = child.gameObject;
+        var c = transform
+            .GetChild(Random.Range(0, transform.childCount - 1))
+            .GetComponent<CellScript>();
+        c.Unit.Value = _unit;
+        _pc = _c;
+        _c = c;
 
-            TMP_Text text = Child.GetComponent<TMP_Text>();
-            
-            textlist.Add(text);
-        }
+        if (_pc != null && _pc != _c)
+            _pc.Unit.Value = null;
     }
 }
-*/

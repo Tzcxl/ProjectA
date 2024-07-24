@@ -1,4 +1,4 @@
-namespace Assets.Scripts.Units.Base
+namespace Assets.Scripts.Unit
 {
     public enum UnitType
     {
