@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 public class DamageCounter : MonoBehaviour
 {
-        void Start()
-        {
+    void Start()
+    {
         // Получаем все объекты с тегом "Unit"
         GameObject[] units = GameObject.FindGameObjectsWithTag("Unit");
 

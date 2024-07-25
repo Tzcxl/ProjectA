@@ -6,7 +6,7 @@ using R3;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Assets.Scripts
+namespace Assets.Scripts.Components
 {
     public class CellScript : MonoBehaviour
     {
@@ -16,9 +16,11 @@ namespace Assets.Scripts
         private TextMeshProUGUI _hp;
         private TextMeshProUGUI _mnvr;
         private TextMeshProUGUI _init;
+
         [SerializeField] private Sprite _empty;
         [SerializeField] private Sprite _filled;
-        private List<IDisposable> _statSubscriptions = new List<IDisposable>();
+
+        private readonly List<IDisposable> _statSubscriptions = new List<IDisposable>();
 
         [field: SerializeField] public int Row { get; private set; }
         [field: SerializeField] public int Column { get; private set; }

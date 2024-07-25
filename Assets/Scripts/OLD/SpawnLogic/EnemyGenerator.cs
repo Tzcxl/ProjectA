@@ -8,7 +8,7 @@ public class EnemyGenerator : MonoBehaviour
     private UnitConfig warConfig;
     private UnitBase allConfig;
     private UnitConfig archConfig;
-    private List<GameObject> units = new List <GameObject>();
+    private List<GameObject> units = new List<GameObject>();
     private List<int> Initiative = new List<int>();
 
 
@@ -33,14 +33,14 @@ public class EnemyGenerator : MonoBehaviour
 
         foreach (var button in buttons)
         {
-            GetImage(button,archPrefab);
+            GetImage(button, archPrefab);
             archPrefab.name = $"E{i}";
             units.Add(archPrefab);
         }
-        
+
         foreach (var label in labels)
         {
-            UpdateCharacterStatsLabel(label,archConfig);
+            UpdateCharacterStatsLabel(label, archConfig);
         }
 
         var Player1row = root.Q<VisualElement>("Player1row");
@@ -64,17 +64,17 @@ public class EnemyGenerator : MonoBehaviour
                 units.Add(archPrefab);
             }
         }
-         i = 1;
+        i = 1;
         foreach (var label in Plabels)
         {
             if (i == 1)
             {
-                UpdateCharacterStatsLabel(label,warConfig);
+                UpdateCharacterStatsLabel(label, warConfig);
                 i++;
             }
             else
             {
-                UpdateCharacterStatsLabel(label,archConfig);
+                UpdateCharacterStatsLabel(label, archConfig);
             }
         }
     }
@@ -89,11 +89,11 @@ public class EnemyGenerator : MonoBehaviour
         button.style.backgroundImage = styleBackground;
     }
 
-    void UpdateCharacterStatsLabel(Label label,UnitConfig unitconf)
+    void UpdateCharacterStatsLabel(Label label, UnitConfig unitconf)
     {
         label.text = $"{unitconf.unitName}\nHP: {unitconf.unitHP}\nAttack: {unitconf.unitDamage}\nInit: {unitconf.unitInitiative}";
-        label.style.fontSize = 10; 
-        label.style.color = Color.white; 
+        label.style.fontSize = 10;
+        label.style.color = Color.white;
     }
 }
 

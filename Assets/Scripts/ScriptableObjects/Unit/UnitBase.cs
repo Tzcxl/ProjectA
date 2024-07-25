@@ -19,5 +19,10 @@ namespace Assets.Scripts.Unit
         public int CellRow = -1;
         public int CellColumn = -1;
         public Sprite Sprite;
+
+        private void Awake()
+        {
+            Stats.SetStatsToDefault();
+        }
     }
 }

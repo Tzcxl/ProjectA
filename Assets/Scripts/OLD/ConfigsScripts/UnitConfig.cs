@@ -13,6 +13,5 @@ public class UnitConfig : ScriptableObject
     public int unitMoves;
     public int unitDefense;
     public int unitStartRowToPlace;
-    public int unitHP;      
+    public int unitHP;
 }
-
