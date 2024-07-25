@@ -55,7 +55,7 @@
     <UnityVersion>2021.3.40f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ExternalAssets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
@@ -104,6 +104,7 @@
     <Compile Include="Assets\Unit\Stats\ExtraStats.cs" />
     <Compile Include="Assets\_Scripts\RealStatsCustomEditor.cs" />
     <Compile Include="Assets\_Scripts\Managers\UnitHolder.cs" />
+    <Compile Include="Assets\ProcedureGeneration\Generation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ExternalAssets\Microsoft.Bcl.TimeProvider.8.0.0\LICENSE.TXT" />
@@ -516,6 +517,22 @@
     </Reference>
     <Reference Include="R3">
       <HintPath>Assets\ExternalAssets\R3.1.1.16\lib\netstandard2.1\R3.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.40f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.40f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.40f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.40f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
