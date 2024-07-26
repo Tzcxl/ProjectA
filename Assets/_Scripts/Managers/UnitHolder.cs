@@ -8,10 +8,11 @@ namespace Assets._Scripts.Managers
     {
         public List<UnitScript> Units;
 
-        public UnitScript UnitTestPref;
+        //public UnitScript UnitTestPref;
 
         public void Start()
         {
+
         }
     }
 }

@@ -10,7 +10,11 @@ namespace Assets.UnitGrid
         [SerializeField] private Cell _cellPrefab;
         [SerializeField] private UnitHolder _unitHolder;
 
-        [HideInInspector] public Dictionary<Vector3, Cell> Cells { get; } = new();
+        [HideInInspector] public Dictionary<Vector2, Cell> Cells { get; } = new();
+
+        private void Awake()
+        {
+        }
 
         private void Start()
         {
@@ -28,7 +32,7 @@ namespace Assets.UnitGrid
                     spawningCell.name = $"Cell [{row}, {column}]";
                     spawningCell.Row = row;
                     spawningCell.Column = column;
-                    Cells.Add(new(row, column), spawningCell);
+                    Cells[new(row, column)] = spawningCell;
                 }
             }
         }

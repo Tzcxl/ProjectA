@@ -20,7 +20,7 @@ namespace Assets.Unit.Stats
 
         public List<UnitScript> CanEvolveTo;
         public Sprite Sprite;
-        [HideInInspector]public int GridRow = -1;
+        [HideInInspector] public int GridRow = -1;
         [HideInInspector] public int GridColumn = -1;
 
         public UnitCombatStyle UnitCombatStyle;

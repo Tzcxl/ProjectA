@@ -549,8 +549,6 @@ MonoBehaviour:
   _unitSprite: {fileID: 7306801035033122675}
   _empty: {fileID: 21300000, guid: 2d214e078eeb4574186c5034ce99d7aa, type: 3}
   _filled: {fileID: 21300000, guid: d9d5c3fa7cb858549934d35b66842b7f, type: 3}
-  <Row>k__BackingField: 0
-  <Column>k__BackingField: 0
   Unit:
     value: {fileID: 0}
 --- !u!114 &1866553737692943223

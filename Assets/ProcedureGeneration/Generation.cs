@@ -43,7 +43,6 @@ public class Generation : MonoBehaviour
     void GenerateRooms(int row)
     {
         int roomsToGenerate = Random.Range(minRoom, maxRoom);
-
         for (int roomsPerRow = 0; roomsPerRow < roomsToGenerate; roomsPerRow++)
         {
             Vector2 newPosition = new Vector2(Random.Range(-2, 2), row);
