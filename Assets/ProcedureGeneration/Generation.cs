@@ -15,32 +15,32 @@ public class Generation : MonoBehaviour
 
     void Start()
     {
-        GenerateStartGraph(spawnRooms);
+        GenerateStartGraph();
         for (int i = 2; i < rowNumber; i += 2)
         {
-            GenerateRooms(spawnRooms, i);
+            GenerateRooms(i);
         }
-        CreateVisualRepresentation(spawnRooms);
+        CreateVisualRepresentation();
     }
 
-    void GenerateStartGraph(List<Room> rooms)
+    void GenerateStartGraph()
     {
         startRoom = new Room(roomPrefab, new Vector2(0, 0));
         endRoom = new Room(roomPrefab, new Vector2(0, rowNumber));
-        
-        rooms.Add(startRoom);
-        rooms.Add(endRoom);
+
+        spawnRooms.Add(startRoom);
+        spawnRooms.Add(endRoom);
     }
 
-    void CreateVisualRepresentation(List<Room> rooms)
+    void CreateVisualRepresentation()
     {
-        foreach (Room room in rooms)
+        foreach (Room room in spawnRooms)
         {
             Instantiate(room.RoomGameObject, room.Position, Quaternion.identity);
         }
     }
 
-    void GenerateRooms(List<Room> rooms, int row)
+    void GenerateRooms(int row)
     {
         int roomsToGenerate = Random.Range(minRoom, maxRoom);
 
@@ -49,7 +49,7 @@ public class Generation : MonoBehaviour
             Vector2 newPosition = new Vector2(Random.Range(-2, 2), row);
             bool positionTaken = false;
 
-            foreach (Room existingRoom in rooms)
+            foreach (Room existingRoom in spawnRooms)
             {
                 if (existingRoom.Position == newPosition)
                 {
@@ -61,7 +61,7 @@ public class Generation : MonoBehaviour
             if (!positionTaken)
             {
                 Room newRoom = new Room(roomPrefab, newPosition);
-                rooms.Add(newRoom);
+                spawnRooms.Add(newRoom);
             }
         }
     }
