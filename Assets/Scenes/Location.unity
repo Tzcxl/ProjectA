@@ -385,6 +385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1370633876}
   - component: {fileID: 1370633875}
+  - component: {fileID: 1370633877}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -404,8 +405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb88a056c2877b24cb57a3a2a485380e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPref: {fileID: 6759457589167921164, guid: f5d2748b4b651fa48b6ee6817ab98885, type: 3}
   roomPrefab: {fileID: 359151724396222355, guid: f3efebec11e8f7545a9db3ac5bc16b9f, type: 3}
-  rowNumber: 20
+  rowNumber: 10
+  minRoom: 1
+  maxRoom: 4
 --- !u!4 &1370633876
 Transform:
   m_ObjectHideFlags: 0
@@ -421,3 +425,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370633877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370633874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff00affec2c8e043ad6a3ae7806c3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 6759457589167921164, guid: f5d2748b4b651fa48b6ee6817ab98885, type: 3}
